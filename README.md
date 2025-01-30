@@ -11,6 +11,7 @@ The fact that one 4090 GPU runs in 24 hours is a legendary CPU program brainflay
 
 | GPU card | --bits | Speed |
 |----------|----|-------------|
+| 5090     | 24	| ??? Mkeys/s |
 | 4090     | 24	| 360 Mkeys/s |
 | A100     | 24 | 180 Mkeys/s |
 | A6000    | 24 | 180 Mkeys/s |
@@ -28,20 +29,20 @@ The fact that one 4090 GPU runs in 24 hours is a legendary CPU program brainflay
 How to search for old lost passphrases:<br>
 Default alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,'!-
 
--v - verbose output<br>
---bits 16 or 20 or 24<br>
---inputAddress addresses.txt - file with addreses<br>
---inputPhrase dictionary.txt - file with phrases and pass<br>
--d ? (GPU card number, id)<br>
---eth (ETH address search) --inputAddress addrEth.txt default mode: BTC, single sha256
+```-v``` - verbose output<br>
+```--bits 16``` or 20 or 24<br>
+```--inputAddress addresses.txt``` - file with addreses<br>
+```--inputPhrase dictionary.txt``` - file with phrases and pass<br>
+```-d 0``` (GPU card number, id)<br>
+
 
 #### For ETH:
---eth - single keccak<br>
---camp2 - keccak*2031<br>
-^^^ two options could be used together<br>
---ethsha256 - sha256 for ETH<br>
---root - specifies prefix for your word<br>
---suffix - number o combimnation to start from<br>
+```--eth``` (ETH address search) --inputAddress addrEth.txt default mode: BTC, single sha256. In this mode iterations do not work.<br>
+```--camp2``` - ETH keccak*2031 slow mode 2031 iterations (closed project generation brainwallets 2016)<br>
+^^^ two options could be used together also looking for regular ether brainwallets mode --eth<br>
+```--ethsha256``` - sha256 for ETH. This mode supports iteration function. --iteration 2<br>
+```--root Hello``` - specifies prefix for your word<br>
+```--suffix 0``` - number o combimnation to start from<br>
 
 Run: ```BrainWords.exe -v --eth --root "Hello word " --suffix 708550400 --inputAddress addresses-Eth.txt```
 
@@ -103,7 +104,7 @@ https://t.me/cuda8
 
 **Why did the program freeze at startup?**
 <br><br>
-She didn't hang up! Program start 3090 --bits24 (10 min.)<br>
+She didn't hang up! Program start 3090 --bits 24 (10 min.)<br>
 The program creates tables and downloads to the device<br>
 One card requires 4GB or more of RAM to work.<br>
 The consumption depends on the size of the table (--bits) and the size of the address file.<br>
@@ -118,7 +119,7 @@ It is recommended to use only OLD addresses 1... from $2
 **How to continue searching after stopping the program?**
 <br><br>
 The program saves the position<br>
-You can start from any position by specifying --suffix 1234567
+You can start from any position by specifying --suffix 123456789
 <hr>
 
 **How to start with 9 characters?**
@@ -147,7 +148,7 @@ GPU 50 17378265062115902 + 354658470655426 = --suffix 17732923532771328<br>
 **How it works? What's this?**
 <br><br>
 Here is a good example of work for you.<br>
-Enter passphrase: fhqyqzhao123 pay attention to the address 1MVFUmYLKmLyC1m3WfyHkEJTZfoHjwDeXE<br>
+Enter passphrase: fhqyqzhao123 pay attention to the address [1MVFUmYLKmLyC1m3WfyHkEJTZfoHjwDeXE](https://www.blockchain.com/explorer/addresses/btc/1MVFUmYLKmLyC1m3WfyHkEJTZfoHjwDeXE)<br>
 The difference is that instead of requests to the blockchain.<br>
 The program checks against the database of addresses with a positive balance.
 <hr>
@@ -217,7 +218,7 @@ __device__ __constant__ char _ALPHABET[37] = "0123456789abcdefghijklmnopqrstuvwx
 
 **How to compile a program?**
 <br><br>
-ubuntu 20.04 CUDA 11.7 (for RTX 4090 CUDA 12.4)<br>
+ubuntu 20.04 CUDA 11.7 (for RTX 4090 CUDA 12.6)<br>
 Run: ```make```
 
 vast.ai<br>
@@ -230,7 +231,7 @@ Incompatible images hidden<br>
 Launch Type: jupyter<br>
 
 
-Windows use VS2019 + install CUDA 11.7 (for RTX 4090 CUDA 12.4)
+Windows use VS2019 + install CUDA 11.7 (for RTX 4090 CUDA 12.6)
 <hr>
 
 **How can I make sure that the program does not stop after it finds it?**
