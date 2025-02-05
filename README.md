@@ -1,4 +1,5 @@
-# For Sale Private SOFT BrainWords ~$500~ $200
+# For Sale Private SOFT BrainWords v0.9 - $500<br>
+Changes: code optimized, minor errors fixed.
 
 ## Find Lost Bitcoin Passphrases (Brainwallet)
 Search passphrases on the fastest program in the world<br>
@@ -7,11 +8,11 @@ They were found on a processor with a maximum speed of 100,000 pasdphrases per s
 Speed RTX 4090 = 360,000,000 passphrases/sec. It's 3600 times faster.<br>
 The fact that one 4090 GPU runs in 24 hours is a legendary CPU program brainflayer in 10 years.<br>
 
-**To buy the program, telegram** https://t.me/cuda8
+To buy the program, write telegram @phrutis
 
 | GPU card | --bits | Speed |
 |----------|----|-------------|
-| 5090     | 24	| ??? Mkeys/s |
+| 5090     | 24	| 720 Mkeys/s |
 | 4090     | 24	| 360 Mkeys/s |
 | A100     | 24 | 180 Mkeys/s |
 | A6000    | 24 | 180 Mkeys/s |
@@ -44,63 +45,55 @@ Default alphabet: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 ```--root Hello``` - specifies prefix for your word<br>
 ```--suffix 0``` - number o combimnation to start from<br>
 
-Run: ```BrainWords.exe -v --eth --root "Hello word " --suffix 708550400 --inputAddress addresses-Eth.txt```
+```BrainWords.exe -v --eth --root "Hello word " --suffix 708550400 --inputAddress addresses-Eth.txt```
 
 
 **Prefix + Combinations** <br>
 TestA -> TestB -> TestC -> Testzzzzz -> Testzzzzzzzzzzzzzz<br>
-Run ```BrainWords.exe -v --bits 24 --root Test --suffix 0 --inputAddress addresses.txt -d 0```
+```BrainWords.exe -v --bits 24 --root Test --suffix 0 --inputAddress addresses.txt -d 0```
 
 Test test A -> Test test B -> Test test C -> Test test zzzzz -> Test test zzzzzzzzzzzzzz<br>
-Run ```BrainWords.exe -v --bits 24 --root "Test test " --suffix 0 --inputAddress addresses.txt -d 0```
+```BrainWords.exe -v --bits 24 --root "Test test " --suffix 0 --inputAddress addresses.txt -d 0```
 
-**Combinations + Suffix (v0.8 only)** <br>
+**Combinations + Suffix** <br>
 A@gmail.com -> B@gmail.com -> C@gmail.com -> zzzzz@gmail.com -> zzzzzzzzzzzzzz@gmail.com<br>
-Run ```BrainWords.exe -v --bits 24 --rootsuffix @gmail.com --suffix 0 --inputAddress addresses.txt -d 0```
+```BrainWords.exe -v --bits 24 --rootsuffix @gmail.com --suffix 0 --inputAddress addresses.txt -d 0```
 
 A Test test -> B Test test -> C Test test -> zzzzz Test test -> zzzzzzzzzzzzzz Test test<br>
-Run ```BrainWords.exe -v --bits 24 --rootsuffix " Test test" --suffix 0 --inputAddress addresses.txt -d 0```
+```BrainWords.exe -v --bits 24 --rootsuffix " Test test" --suffix 0 --inputAddress addresses.txt -d 0```
 
 **Finding passphrases from a text file** <br>
-Run ```BrainWords.exe -v --inputPhrase dictionary.txt --inputAddress addresses.txt -d 0```
+```BrainWords.exe -v --inputPhrase dictionary.txt --inputAddress addresses.txt -d 0```
 
 **Hashcat + BrainWords (streaming from an external character generator)** <br>
-Run ```hashcat.exe --stdout -a 0 dict.txt dict2.txt | BrainWords.exe -v --bits 8 --inputIn --inputAddress addresses.txt -d 0```
-<br>
-Or<br>
-Run ```hashcat.exe --stdout -a 0 dict.txt -r use.rule | BrainWords.exe -v --bits 8 --inputIn --inputAddress addresses.txt -d 0```
-<br>
-Or<br>
-Run ```./hashcat -D 2 --stdout -a 3 -i --increment --increment-min=1 --increment-max=8 ?u?l?l?l?d?d?d?d | ./BrainWords -v --bits 8 --inputIn --inputAddress addresses.txt -d 0```
+```hashcat.exe --stdout -a 0 dict.txt dict2.txt | BrainWords.exe -v --bits 8 --inputIn --inputAddress addresses.txt -d 0```
+<br><br>
+```hashcat.exe --stdout -a 0 dict.txt -r use.rule | BrainWords.exe -v --bits 8 --inputIn --inputAddress addresses.txt -d 0```
+<br><br>
+```./hashcat -D 2 --stdout -a 3 -i --increment --increment-min=1 --increment-max=8 ?u?l?l?l?d?d?d?d | ./BrainWords -v --bits 8 --inputIn --inputAddress addresses.txt -d 0```
 
 **Linux:**
 
 For ubuntu (linux), be sure to convert the address database to Unix format.<br> 
 This will remove the ^M from the end of addresses<br>
-sudo apt update<br>
-sudo apt install -y dos2unix<br>
-dos2unix addresses.txt<br>
+```sudo apt update```<br>
+```sudo apt install -y dos2unix```<br>
+```dos2unix addresses.txt```<br>
 
-Run ```chmod +x BrainWords```<br>
-Run ```./BrainWords -v --bits 24 --root Test --suffix 0 --inputAddress addresses.txt -d 0```
+```chmod +x BrainWords```<br>
+```./BrainWords -v --bits 24 --root Test --suffix 0 --inputAddress addresses.txt -d 0```
 
 **Hashcat**
 <br>
-Run ```./hashcat.bin --stdout -a 6 dictionary.txt ?d?d?d?d | ./BrainWords -v --bits 8 --inputIn --inputAddress addresses.txt -d 0```
-<br>
-or<br>
-Run ```./hashcat.bin --stdout -a 3 --increment ?u?l?l?l?d?d?d | ./BrainWords -v --bits 8 --inputIn --inputAddress addresses.txt -d 0```
+```./hashcat.bin --stdout -a 6 dictionary.txt ?d?d?d?d | ./BrainWords -v --bits 8 --inputIn --inputAddress addresses.txt -d 0```
+<br><br>
+```./hashcat.bin --stdout -a 3 --increment ?u?l?l?l?d?d?d | ./BrainWords -v --bits 8 --inputIn --inputAddress addresses.txt -d 0```
 <br>
 Low flow rate linux up to 5 Mkeys, Windows up to 10 Mkeys<br>
 (If you need more speed, make a copy of the hashcat folder, run )
 <hr>
 
 ### Frequently asked Questions
-
-**How to buy the program?**
-<br><br>
-https://t.me/cuda8
-<hr>
 
 **Why did the program freeze at startup?**
 <br><br>
@@ -278,6 +271,18 @@ After searching, you can install new drivers.<br>
 ```--camp2``` Enable search mode for camp2 (keccak*2031) ETH addresses<br>
 ```--ethsha256``` sha256 for ETH<br>
 ```--root``` Fixed part in generation ```--root 1234``` or ```--root " 1234 1234"``` with space<br>
+```--rootsuffix``` Generation + Fixed part```--rootsuffix 1234``` or ```--rootsuffix " BTC"``` with space<br>
 ```--suffix``` Number o combimnation to start from ```--suffix 0```<br>
 ```-d``` number of the required gpu ```-d 0``` or ```-d 1```
+<hr>
+# BONUS
+Added argument --priv
+
+If you add it to the line, it GPU reads private keys (length 64) from file and from stream.
+
+```BrainWords-priv.exe -v --inputPhrase private_keys.txt --priv --inputAddress addresses.txt -d 0```
+
+```permutation.py | BrainWords.exe -v --bits 8 --inputIn --priv --inputAddress addresses.txt -d 0```
+
+Included source code version 0.7 reading private keys
 <hr>
