@@ -1,4 +1,4 @@
-# For Sale Private SOFT BrainWords v0.9 - $500<br>
+# For Sale Private SOFT BrainWords v0.9 - $250<br>
 Changes: code optimized, minor errors fixed.
 
 ## Find Lost Bitcoin Passphrases (Brainwallet)
