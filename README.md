@@ -12,7 +12,7 @@ To buy the program telegram https://t.me/cuda8
 
 | GPU card | --bits | Speed |
 |----------|----|-------------|
-| 5090     | 24	| 720 Mkeys/s |
+| 5090     | 24	| 540 Mkeys/s |
 | 4090     | 24	| 360 Mkeys/s |
 | A100     | 24 | 180 Mkeys/s |
 | A6000    | 24 | 180 Mkeys/s |
