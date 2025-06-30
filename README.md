@@ -1,4 +1,4 @@
-# For Sale Private SOFT BrainWords v0.9 - $500<br>
+# For Sale Private SOFT BrainWords v0.9 - ~~$500~~ -> $250<br>
 Changes: code optimized, minor errors fixed.
 
 ## Find Lost Bitcoin Passphrases (Brainwallet)
@@ -8,7 +8,7 @@ They were found on a processor with a maximum speed of 100,000 pasdphrases per s
 Speed RTX 4090 = 360,000,000 passphrases/sec. It's 3600 times faster.<br>
 The fact that one 4090 GPU runs in 24 hours is a legendary CPU program brainflayer in 10 years.<br>
 
-To buy the program telegram https://t.me/cuda8/271
+To buy the program telegram https://t.me/cuda8
 
 | GPU card | --bits | Speed |
 |----------|----|-------------|
