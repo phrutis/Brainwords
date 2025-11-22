@@ -165,6 +165,13 @@ Here is a white list of passwords, phrases, balances, study<br>
 https://privatekeyfinder.io/brainwallet/bitcoin/
 <hr>
 
+**Windows can't find my test password.**
+
+Use a dictionary with more than 100,000 lines.<br>
+Save the text file with passwords and addresses for LF UNIX.<br>
+You can do this in Emeditor by saving the file as [unclear text], and select LF UNIX encoding.
+<hr>
+
 **Multigpu program?**
 <br><br>
 The program is not multigpu. For each card, indicate your id<br>
